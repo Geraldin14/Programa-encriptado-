@@ -1,0 +1,41 @@
+#GERALDIN  PAOLA CARRIAZO JULIO.
+
+import string
+
+def descifrar(mensaje):
+
+message=string.decode(mensaje)
+
+# Buscar el primer carácter de la clave
+
+clave = message[0]
+
+# Buscar el último carácter de la clave
+
+clave_final = message[-1]
+
+# Generar el código de sustitución
+
+codigo_sustitución = ''
+
+# Iterar sobre todos los caracteres del mensaje
+
+for i in range(1, len(message)):
+
+# Si el carácter es igual a la clave
+
+if message[i] == clave:
+
+# Sustituir el carácter de la clave
+
+codigo_sustitución = codigo_sustitución + chr(clave_final)
+
+# Incrementar el índice
+
+i = i + 1
+
+else:
+
+codigo_sustitución = codigo_sustitución + message[i]
+
+return codigo_sustitución
